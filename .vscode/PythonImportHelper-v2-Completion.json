@@ -1,0 +1,37 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "OneHotEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "apply_onehot_encoder",
+        "kind": 2,
+        "importPath": "desafio.tools",
+        "description": "desafio.tools",
+        "peekOfCode": "def apply_onehot_encoder(train:pd.DataFrame, columns_to_encode:list, test:pd.DataFrame=None):\n    # Resetear índices para evitar desalineación\n    train = train.reset_index(drop=True)\n    # Crear el OneHotEncoder\n    encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')\n    # Ajustar y transformar las columnas seleccionadas\n    transformed_data = encoder.fit_transform(train[columns_to_encode])\n    # Crear un DataFrame con las columnas transformadas\n    transformed_df = pd.DataFrame(transformed_data, columns=encoder.get_feature_names_out(columns_to_encode))\n    # Concatenar con el DataFrame original excluyendo las columnas transformadas",
+        "detail": "desafio.tools",
+        "documentation": {}
+    }
+]
